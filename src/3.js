@@ -1,4 +1,4 @@
-var mentors = [
+const mentors = [
     {
         name: 'Irina',
         title: 'Dr.',
@@ -15,18 +15,13 @@ var mentors = [
 ];
 
 function getMentorInfo(mentors, name) {
-    var result;
-    var greeting = 'Hello ';
+    const greeting = 'Hello ';
+    const result = mentors.find(person => person.name === name);
 
-    result = mentors.find(function (person) {
-        return person.name === name;
-    });
-
-    var mentorTitle = 'Junior Developer';
-
-    if (result.yearsOfExp > 10) {
+    let mentorTitle = 'Junior Developer';
+    if (result.yearsOfExperience > 10 && result.yearsOfExperience < 20) {
         mentorTitle = 'Senior Developer';
-    } else if (result.yearsOfExp > 20) {
+    } else if (result.yearsOfExperience > 20) {
         mentorTitle = 'Very Senior Developer';
     }
 
@@ -36,6 +31,9 @@ function getMentorInfo(mentors, name) {
     return result;
 }
 
-var result = getMentorInfo(mentors, 'Etza')
+const result = getMentorInfo(mentors, 'Etza')
 
-module.exports = getMentorInfo
+module.exports = {
+    getMentorInfo,
+    mentors,
+}
