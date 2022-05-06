@@ -1,7 +1,7 @@
-var removeVowels = require("./9");
+const removeVowels = require("./9");
 
 function removeVowelsForWords(words) {
-  var result = words.map(function(word) {
+  const result = words.map(function (word) {
     return removeVowels(word);
   });
 

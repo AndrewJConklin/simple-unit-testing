@@ -1,8 +1,12 @@
-function getCircleAreas(radiusArr) {
-  var areasArr = [];
+function getCircleArea(radius) {
+  return (radius ** 2) * Math.PI
+}
 
-  for (var i = 0; i < radiusArr.length; i++) {
-    var circleArea = getCircleArea(radiusArr[i]);
+function getCircleAreas(radiusArr) {
+  let areasArr = [];
+
+  for (let i = 0; i < radiusArr.length; i++) {
+    const circleArea = +getCircleArea(radiusArr[i]).toFixed(3);
     areasArr.push(circleArea);
   }
 
